@@ -16,7 +16,7 @@ const Details = () => {
     (async () => {
       try {
         const res = await fetch(
-          `${process.env.REACT_APP_API_URL}?id=${id}&units=metric&appid=${process.env.REACT_APP_API_ID}`
+          `${process.env.REACT_APP_API_URL}/weather?id=${id}&units=metric&appid=${process.env.REACT_APP_API_ID}`
         );
         const data = await res.json();
         console.log(data);

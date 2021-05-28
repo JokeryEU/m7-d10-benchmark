@@ -12,7 +12,7 @@ const Home = () => {
     try {
       setLoading(true);
       const resp = await fetch(
-        `${process.env.REACT_APP_API_URL}?q=${query}&units=metric&appid=${process.env.REACT_APP_API_ID}`
+        `${process.env.REACT_APP_API_URL}/weather?q=${query}&units=metric&appid=${process.env.REACT_APP_API_ID}`
       );
       const data = await resp.json();
       console.log();
@@ -37,7 +37,7 @@ const Home = () => {
       </Jumbotron>
       <Container>
         {(loading && <Spinner animation="border" variant="primary" />) ||
-          (city !== undefined && <TrackList city={city!} />)}
+          (city !== undefined && <TrackList city={city} />)}
       </Container>
     </>
   );
