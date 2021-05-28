@@ -12,9 +12,10 @@ const Home = () => {
     try {
       setLoading(true);
       const resp = await fetch(
-        `${process.env.REACT_APP_API_URL}?q=${query}&units=metric&appid=57dab0918596ebc04c155267641b9402`
+        `${process.env.REACT_APP_API_URL}?q=${query}&units=metric&appid=${process.env.REACT_APP_API_ID}`
       );
       const data = await resp.json();
+      console.log();
 
       console.log(data);
       setcity(data);
